@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>rememberPsw</title>
+	<style type="text/css" media="screen">
+		#tip{margin: 10px auto;text-align: center;border: 1px solid orange;width: 200px;height: 50px;line-height: 25px;background: yellow}
+	</style>
+</head>
+<body id="aa">
+	<div id="rmb" style="background: #fff;text-align: center;width: 300px;margin: 10px auto" onmouseover="tipInfo()" onmouseout="removeTip()" >
+		<input type="checkbox" name="" style="vertical-align:middle;"> <span style="vertical-align:middle; ">两周内自动登录</span>
+	
+	</div>
+	<script type="text/javascript">
+	var rmb = document.getElementById('aa');
+		function tipInfo(){
+			
+			var div = document.createElement('div');
+			div.id = 'tip';
+			div.innerHTML = '为了您的信息安全，请不要在公共场合使用此功能';
+			div.style.margin = '10px auto';
+			rmb.appendChild(div);
+			console.log(rmb.innerHTML);
+		}
+		function removeTip(){
+			var aaa = document.getElementById('tip');
+			rmb.removeChild(aaa);
+		}
+	</script>
+</body>
+</html>

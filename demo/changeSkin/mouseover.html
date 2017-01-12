@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>mouseover</title>
+</head>
+<body>
+	<div id="div" style="background: red;width: 200px;height: 200px; onmouseover="changeStyle()" ">
+		
+	</div>
+</body>
+<script type="text/javascript">
+	window.onload = function(){
+		
+		function changeStyle(){
+			var div = document.getElementById('div');
+			div.style.background = 'green'
+		}
+	}
+</script>
+</html>

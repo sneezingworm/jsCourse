@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>input</title>
+	<style>
+		#input{width: 60px;height: 100px;background: #ddd;text-align: center;}
+		.d{margin: 5px 0;padding: 8px;cursor: pointer;}
+	</style>
+</head>
+<body>
+	<button type="button" onclick="pop()">input</button>
+	<div id="input" style="display: none" >
+		<div class="d1 d" style="background: #777;">手写</div>
+		<div class="d2 d" style="background: #777;">拼音</div>
+		<div class="d3 d" style="background: #777;">关闭</div>
+	</div>
+</body>
+<script type="text/javascript">
+	function pop(){
+		var input = document.getElementById('input');
+		if (input.style.display==='none') {
+			input.style.display = 'block';
+		}else{
+			input.style.display = 'none';
+		}
+	}
+	var d = document.getElementsByClassName('d');
+	for(var i=0;i<d.length;i++){
+
+		d[i].addEventListener('mouseover',function(){
+			this.style.background = 'red';
+		});
+		d[i].addEventListener('mouseout',function(){
+			this.style.background = '#777';	
+		});
+	}
+	d[2].addEventListener('click',function(){
+		this.parentNode.style.display='none';
+	});
+	// pop();
+</script>
+</html>

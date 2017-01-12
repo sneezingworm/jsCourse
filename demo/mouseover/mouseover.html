@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>mouseover</title>
+	<style type="text/css">
+		.div{border: 10px solid red;background: gray;}
+		.div1{border: 10px solid blue;background: green;border-radius: 50px;}
+	</style>
+</head>
+<body>
+	<div id="div" class="div" style="width: 200px;height: 200px; margin: 10px auto" onmouseover=changeStyle() onmouseout=resetStyle()>
+		
+	</div>
+</body>
+<script type="text/javascript">
+
+		
+		function changeStyle(){
+			var div = document.getElementById('div');
+			div.className = 'div1';
+
+		}
+		function resetStyle(){
+			div.className = 'div';
+		}
+</script>
+</html>

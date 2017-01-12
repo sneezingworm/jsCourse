@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="jquery.js"></script>
+	<title>苹果免费拿</title>
+	<link rel="stylesheet" href="public.css">
+	<style>
+	*{padding: 0;margin: 0}
+		#img img{width: 100%;margin-bottom: -5px}
+	
+		.cd{background: rgb(71,71,79);width: 30px;height: 50px;color: rgb(217,217,219);font-size: 35px;text-align: center;line-height: 36px;font-family: "kaiti";border-radius: 5px;display: inline-block;box-shadow: 0px 2px 5px 0 #555}
+		.cd div{width: 100% ;height: 25px;overflow: hidden;margin-top: 1px; box-shadow: 0px 2px 5px 0 #555}
+		.a{background: linear-gradient(rgb(0,0,0), rgb(120,120,120));border-radius: 5px 5px 0px 0px;}
+		.b{line-height: 0px;border-radius: 0 0 5px 5px; background: linear-gradient(rgb(120,120,120), rgb(40,40,40));}
+		.time{;position: relative;top: -60px;margin: 0 auto;width: 80%}
+		.div .cd{margin: 0 auto}
+		.exchange{background: rgb(255,142,1); color: red;position: relative;color: white;padding: 5px;border-radius: 3px;text-decoration: none;font-family: "黑体";box-shadow: 0px 2px 3px 0px #ccc;font-size: 13px}
+		.move{animation:myfirst 2s;-moz-animation: myfirst 2s;	 -webkit-animation: myfirst 2s;	 -o-animation: myfirst 2s;	}
+		.time2{top: -104px;}
+		#five{overflow: hidden;}
+		/*//#img4{margin-top: -65px;w}*/
+		@keyframes myfirst
+		{0%   {transform: rotateX(180deg);transform-origin:0% 0%}
+		100% {transform: rotateX(0deg);transform-origin:0% 0%}
+		}
+
+
+	</style>
+</head>
+<body>
+<header style="position: fixed;top: 0;width: 100%;background: #fff">
+	<div class="h-left"><a class="sb-back" href="javascript:history.back(-1)" title="返回"></a></div>
+	
+</header><!-- #BeginLibraryItem "/library/up_menu.lbi" --><!--弹出菜单js-->
+<script type="text/javascript" src="library/themesmobile/68ecshopcom_mobile/js/mobile.js" ></script>
+<div class="goods_nav hid" id="menu">
+        <div class="Triangle">
+          <h2></h2>
+        </div>
+        <ul>
+          <li><a href="library/index.php"><span class="menu1"></span><i>首页</i></a></li>
+          <!--<li><a href="catalog.php"><span class="menu2"></span><i>分类</i></a></li>-->
+          <li><a href="library/flow.php"><span class="menu3"></span><i>购物车</i></a></li>
+          <li style=" border:0;"><a href="library/user.php"><span class="menu4"></span><i>我的</i></a></li>
+        </ul>
+      </div>
+	<div id="img" style="margin-top: 45px">
+		<div><img src="img/1.jpg" alt=""></div>
+		<div><img src="img/2.jpg" alt=""></div>
+		<div><img src="img/3.jpg" alt=""></div>
+		<div >
+			<img src="img/4.jpg" alt="" id="img4">
+			<div class="time">
+				<div class="cd">
+					<div class="a ">0</div>
+					<div class="b move">0</div>
+				</div>	
+				<div class="cd">
+					<div class="a ">5</div>
+					<div class="b move">5</div>
+				</div>	
+				<div class="cd">
+					<div class="a ">4</div>
+					<div class="b move">4</div>
+				</div>	
+				<div class="cd">
+					<div class="a ">4</div>
+					<div class="b move">4</div>
+				</div>
+
+			</div>
+			<a href="www.biandanmall.com/mobile/ch.php" class="exchange" style="color: white">去兑换></a>
+		</div>
+
+		<div id="five" style="margin-top: -41px">
+			<img src="img/5.jpg" alt="">
+			<div class="time time2">
+					<div class="cd">
+						<div class="a ">0</div>
+						<div class="b move">0</div>
+					</div>	
+					<div class="cd">
+						<div class="a ">8</div>
+						<div class="b move">8</div>
+					</div>	
+					<div class="cd">
+						<div class="a ">1</div>
+						<div class="b move">1</div>
+					</div>	
+					<div class="cd">
+						<div class="a ">4</div>
+						<div class="b move">4</div>
+					</div>
+
+				</div>
+				<a href="www.biandanmall.com/mobile/ch.php" class="exchange exchange2" style="color: white">去兑换></a>
+			</div>
+
+	</div>
+	<script>
+		window.onload = function(){
+			var cdW = parseInt($(".cd").css('width')) ;
+			var cdH = parseInt( cdW)*1.2211;
+
+			$('.cd').css({'height':cdH,'line-height':cdH+'px'});
+			$('.cd div').css('height',cdH/2);
+			$('.time').css('width',cdW*4+24);
+			var timeH = parseInt( $(".time").css('height'));
+
+			$("#five").css('margin-top',-timeH-40);
+			
+			var imgH = parseInt($('#img4').css('height'));
+			var imgW = parseInt($('#img4').css('width'));
+
+			$('.exchange').css('top',-(imgH/2.9026+timeH));
+
+			$(".exchange").css('left',imgW/1.40911);
+			$('.exchange2').css('top',-(imgH/2.3836+timeH));
+			
+		
+			$('.time').css('top',-imgH/8.0536);
+			$('.time2').css('top',-imgH/5.0536);
+			var fiveH = parseInt( $('#five').css('height'));
+			$('#five').css('height',fiveH-timeH-23);
+			//alert(cdH);
+		}
+	</script>
+	
+	
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<style>
+		#div{width: 200px;height: 200px;background: red;margin-top: 20px;margin: 20px auto;display: block}
+		.div{width: 200px;height: 200px;background: red;margin-top: 20px;margin: 20px auto;display: block}
+		#control{width: 250px;margin-top: 20px;margin: 20px auto}
+	</style>
+	<title>changeDiv</title>
+</head>
+<body>
+	<div id="control">
+		<button onclick=changeW()>变宽</button>
+		<button onclick=changeH()>变高</button>
+		<button onclick=hiddena()>隐藏</button>
+		<button onclick=changeColor()>变色</button>
+		<button onclick=resetDiv()>重置</button>
+	</div>
+	<div id="div" style="display: block; background: red" class="">
+	</div>
+</body>
+<script>
+	var div = document.getElementById('div');
+	function changeW(){
+		var w =  (div.offsetWidth);
+		w+=100; 
+		div.style.width = w+'px';
+	}
+	function changeH(){
+		var h =  (div.offsetHeight);
+		// alert(h);
+		h+=100; 
+		div.style.height = h+'px';
+	}
+	function hiddena(){
+		if(div.style.display==='block'){
+			div.style.display='none';
+		}
+	
+		
+	}
+	function resetDiv(){
+		div.style.height = '200px';
+		div.style.width = '200px';
+		div.style.background='red';
+		div.style.display='block';
+	}
+	function changeColor(){
+		
+		div.style.backgroundColor = '#555555';
+
+	}
+		
+		
+</script>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<script src="jquery.js"></script>
+	<title>倒计时demo</title>
+	<style>
+		.time{background: #ddd;margin: 80px auto}
+		.cd{background: rgb(71,71,79);width: 60px;height: 50px;color: rgb(217,217,219);font-size: 35px;text-align: center;line-height: 36px;font-family: "kaiti";border-radius: 5px;display: inline-block;box-shadow: 0px 2px 5px 0 #555}
+		.cd div{width: 100% ;height: 25px;overflow: hidden;margin-top: 1px; box-shadow: 0px 2px 5px 0 #555}
+		.a{background: linear-gradient(rgb(0,0,0), rgb(120,120,120));border-radius: 5px 5px 0px 0px;}
+		.b{line-height: 0px;border-radius: 0 0 5px 5px; background: linear-gradient(rgb(120,120,120), rgb(40,40,40));position: relative;z-index: 5}
+		.c{line-height: 0px;border-radius: 0 0 5px 5px; background: linear-gradient(rgb(120,120,120), rgb(40,40,40)); position: relative;top: -30px;z-index: 0}
+		.div .cd{margin: 0 auto}		
+		.move{animation:myfirst 1.5s;-moz-animation: myfirst 1.5s;	 -webkit-animation: myfirst 1.5s;	 -o-animation: myfirst 1.5s;	}
+		#five{overflow: hidden;}
+		@keyframes myfirst
+		{0%   {transform: rotateX(180deg);transform-origin:0% 0%}
+		100% {transform: rotateX(0deg);transform-origin:0% 0%}
+		}
+		.test{color: red}
+	</style>
+</head>
+<body>
+	<div class="time">
+				<div class="cd">
+					<div class="a ">0</div>
+					<div class="b">0</div>
+					<div class="c">0</div>
+				</div>
+				<div class="cd1 cd">
+					<div class="a ">0</div>
+					<div class="b">0</div>
+					<div class="c">0</div>
+				</div>
+				<div class="cd2 cd">
+					<div class="a ">0</div>
+					<div class="b">0</div>
+					<div class="c">0</div>
+				</div>
+				<div class="cd3 cd">
+					<div class="a ">0</div>
+					<div class="b">0</div>
+					<div class="c">0</div>
+				</div>
+				
+	</div>			
+	<script>
+		window.onload = function(){
+			var b = $('.cd');
+			var d = $('.cd1');
+			var e = $('.cd2');
+			var f = $('.cd3');
+			timeGo(b);
+			timeGo(e);
+			timeGo(f);
+			timeGo(d);
+			timeInit();
+			setTime(b);
+		}
+		//初始化显示日历长宽
+		function timeInit(){
+			var cdW = parseInt($(".cd").css('width')) ;
+			var cdH = parseInt( cdW)*1.2211;
+			$('.cd').css({'height':cdH,'line-height':cdH+'px'});
+			$('.cd div').css('height',cdH/2);
+			$('.time').css('width',cdW*4+24);
+			$('.c').css('top',cdH/-2+'px');
+		}
+		//翻页函数，传入值为需要翻页动画的jq对象
+		function timeGo(obj){
+			var rad ;
+			var item = getItem(obj,1);	
+			setInterval(function(){
+				rad = getNum();
+				setTime(obj,rad);
+				item.addClass('move');
+				setTimeout(function(){
+					item.removeClass('move')
+				},1500);
+			},3000);
+		}
+		//获取传入对象的子对象
+		function getItem(obj,index){
+			var item = obj.children().eq(index);
+			return item;
+		}
+		//获取一个小于10的正整数
+		function getNum(){
+			var rad =Math.ceil( Math.random()*10);
+			return rad-1;
+		}
+		//设置日历上的数字
+		function setTime(obj,ran){
+			var top = getItem(obj,0);
+			var mid = getItem(obj,1);
+			var bottom = getItem(obj,2);
+			top.text(ran);
+			mid.text(ran);
+			setTimeout(function(){
+				bottom.text(ran);
+			},1000);
+		}
+	</script>
+</body>
+</html>

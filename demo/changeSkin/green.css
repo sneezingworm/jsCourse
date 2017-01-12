@@ -1,0 +1,9 @@
+#control{position: absolute;right: 0px;}
+#control li{width: 10px;height: 10px;float: left;margin: 5px;}
+*{margin: 0;padding 0;list-style:none}
+#list{color: white;font-size: 20px;margin: 10px auto;width: 500px;}
+.item{float: left;background: blue;margin: 5px;padding:5px;border-radius: 2px;}
+body{background:green;color: white}
+#control #s1{background: black;border:5px solid white;}
+#control #s2{background: green;border:5px solid blue;border-radius: 10px}
+#control #s3{background: red;border:5px solid yellow;}

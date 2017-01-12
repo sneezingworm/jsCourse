@@ -1,0 +1,15 @@
+*{padding: 0;margin:0;list-style:none }
+img{width: 100%}
+#footer{background-image: url(img/bg.jpg);background-size: contain;;color: white;}
+#footer h2{margin: 0px 0;padding: 20px 0;}
+h2 img{display: block;width: 50%;margin:0px auto;}
+.content{width: 88%;margin:0 auto;}
+#user-img{width: auto;background: red;margin: 0 auto}
+.content .item a{display:block;background-image: url(img/立即兑换.png);width: 25%;background-size: cover;margin: 0 auto;
+	position: relative;bottom: 40px;height: 40px;cursor: pointer;}
+#user-img li{float: left;width: 21%;text-align: center;padding:0 2%}
+.circle{width: 100%;height: 78px; background-image:url(img/circle.png); background-size: contain;margin: 0 auto;overflow: hidden;}
+.circle img{width: 93%;opacity: 1;border-radius: 50%;margin: 0 auto;margin-top: 3.5%;}
+#imgs img{margin-bottom: -5px}
+#user-img li{font-size: 11px;}
+.nickname{margin:5px 0; }

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>changeSkin</title>
+	<link rel="stylesheet" type="text/css" href="general.css">
+</head>
+<body>
+	<ul id="list">
+		<li class="item">英语角</li>
+		<li class="item">数学屋</li>
+		<li class="item">语文桥</li>
+		<li class="item">历史河</li>
+		<li class="item">化学室</li>	
+	</ul>
+	<ul id="control">
+		<li id="s1"></li>
+		<li id="s2"></li>
+		<li id="s3"></li>
+	</ul>
+</body>
+<script>
+	window.onload = function(){
+		var a = document.getElementById('s1');
+		var l = document.getElementsByTagName('link')[0];
+		for(var i=1;i<=3;i++){
+			document.getElementById('s'+i).addEventListener('click',function(){
+				if(this.id==='s1'){
+					l.href='general.css';
+				}else if(this.id==='s2'){
+					l.href='green.css';
+				}else if(this.id==='s3'){
+					l.href='red.css';
+				}
+			})
+		}
+		
+	}
+</script>
+</html>

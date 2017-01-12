@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script type="text/javascript" src="jquery.js"></script>
+	<style>
+		#div{width: 90%;height: 600px;background: rgb(163,68,55);margin: 10px auto;border-radius: 20px;overflow: hidden;box-shadow: 0px 3px 5px 0px #333;}
+		#aa{background: rgb(191,77,59);width: 200%;height: 400px;border-radius: 0 0 400px 400px;position: relative;left: -50%;box-shadow: 0px 2px 4px 0px #444;}
+		#btn{width: 80px;height: 80px;border-radius: 50%;position: relative;background: rgb(255,170,59);z-index: 10;box-shadow: 0px 1px 2px 0px #333;
+			color: white;line-height: 80px;text-align: center;font-weight: 800;font-family: "黑体";top: 85%
+		}
+		#aa div{margin: 0 auto;text-align: center;color: white}
+		#aa #img{width: 50px;}
+		#img img{width: 100%;border-radius: 50%}
+		#info{position: relative;top: 60px;}
+		#subhead{margin-top:10px;line-height: 50px; }
+		.move{animation:myfirst 2s;-moz-animation: myfirst 2s;	 -webkit-animation: myfirst 2s;	 -o-animation: myfirst 2s;	}
+		@keyframes myfirst
+		{0%   {transform: rotateY(0deg);}
+		100% {transform: rotateY(360deg);}
+		}
+		@-moz-keyframes myfirst 
+		{0%   {transform: rotateY(0deg);}
+		100% {transform: rotateY(360deg);}
+		}
+
+		@-webkit-keyframes myfirst
+		{0%   {transform: rotateY(0deg);}
+		100% {transform: rotateY(360deg);}
+		}
+
+		@-o-keyframes 
+		{0%   {transform: rotateY(0deg);}
+		100% {transform: rotateY(360deg);}
+		}
+
+
+	</style>
+</head>
+<body>
+	
+	<div  id="div" >
+		<div id="aa">
+			<div id="info">
+				<div id="img"><img src="logo.png" alt=""></div>
+				<div >扁担商城</div>
+				<div id="subhead">大吉大利，恭喜发财</div>
+				
+			</div>
+			<div id="btn">拆红包</div>
+		</div>
+	</div>
+	<script>
+	window.onload = function(){
+				init();
+
+	}
+	window.onresize = function(){
+		init();
+}
+		function init(){
+			var divW = parseInt( $("#div").css('width'));
+			//alert(divW);
+			var divH = divW*1.44;
+			var btnH = parseInt($("#btn").css('width')) ;
+			var infoH = parseInt( $('#info').css("height"));
+			$("#div").css('height',divH);
+			$('#aa').css('height',divW);
+
+			$("#btn").css('top',divW-btnH/2-infoH);
+			//alert();
+		};
+
+		$('#btn').click(function(){
+				$('#btn').addClass('move');
+				
+				setTimeout("go()", 1500); 
+
+			}
+		);
+		function go(){
+			
+			 location.href  = 'secend.html';
+		}
+	</script>
+</body>
+</html>
+
